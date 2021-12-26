@@ -14,10 +14,6 @@ def select(file, payload):
     return targets
 
 def run(url, payload):
-    proxies = {
-               'http': 'http://127.0.0.1:8080',
-               'https': 'http://127.0.0.1:8080',
-            }
     escaped_payload = payload.replace('"', '\\"')
     res = requests.get(url)
     if payload in res.text or escaped_payload in res.text:
